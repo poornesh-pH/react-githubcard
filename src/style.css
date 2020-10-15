@@ -1,0 +1,15 @@
+h2,
+p,
+.name,
+.company {
+  font-family: Lato;
+}
+h2 {
+  text-align: center;
+}
+.name {
+  font-size: 125%;
+}
+img{
+  width: 75px;
+}
