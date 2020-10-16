@@ -1,8 +1,4 @@
-h2,
-p,
-.name,
-.company,
-.location{
+body{
   font-family: Lato;
 }
 h2 {

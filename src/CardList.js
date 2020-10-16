@@ -6,7 +6,7 @@ const CardList = props => {
     <div>
     <br/><hr/>
       {accounts && accounts.map(profile => (
-        <CardComponent {...profile} />
+        <CardComponent {...profile} key={profile.id}/>
       ))}
     </div>
   );
