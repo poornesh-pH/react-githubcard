@@ -13,6 +13,9 @@ class AddCard extends Component {
     const handleSubmit = e => {
       e.preventDefault();
       this.props.addCard(this.state.name)
+      this.setState({
+        name:''
+      })    
     };
     return (
       <div>

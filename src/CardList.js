@@ -5,7 +5,7 @@ const CardList = props => {
   return (
     <div>
     <br/><hr/>
-      {profiles.map(profile => (
+      {profiles && profiles.map(profile => (
         <CardComponent {...profile} />
       ))}
     </div>

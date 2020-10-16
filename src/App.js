@@ -2,6 +2,7 @@ import React,{Component} from "react";
 import CardList from './CardList';
 import AddCard from './AddCard';
 import tempData from './tempData';
+import request from 'superagent'
 import "./style.css";
 
  class App extends Component {
@@ -10,7 +11,11 @@ import "./style.css";
    };
    render(){
      const addProfile=(name)=>{
-       console.log(name)
+       request.get(`https://api.github.com/users/${name}`)
+       .then((res)=>{this.setState({
+         profiles: {...profiles}
+       })})
+       .catch((err)=>alert('User '+ err.message))
      }
       return (
     <div>
