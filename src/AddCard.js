@@ -1,15 +1,34 @@
-import React,{Component} from 'react';
+import React, { Component } from "react";
 
-class AddCard extends Component{
-render(){
-  return(
-    <div>
-    <form actions="">
-    <input type="text" name="name" placeholder="GitHub Username"/>
-    <button type="submit">Add Card</button>
-    </form>
-    </div>
-  )
-}
+class AddCard extends Component {
+  state = {
+    name: ""
+  };
+  render() {
+    const handleChange = e => {
+      this.setState({
+        [e.target.id]: e.target.value
+      });
+    };
+    const handleSubmit = e => {
+      e.preventDefault();
+      this.props.addCard(this.state.name)
+    };
+    return (
+      <div>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            id="name"
+            value={this.state.name}
+            onChange={handleChange}
+            placeholder="GitHub Username"
+            required
+          />
+          <button type="submit">Add Card</button>
+        </form>
+      </div>
+    );
+  }
 }
 export default AddCard;

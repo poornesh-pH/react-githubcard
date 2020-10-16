@@ -9,10 +9,13 @@ import "./style.css";
      profiles : tempData
    };
    render(){
+     const addProfile=(name)=>{
+       console.log(name)
+     }
       return (
     <div>
     <h2>GitHub Card</h2>
-    <AddCard />
+    <AddCard addCard={addProfile}/>
     <CardList profiles={this.state.profiles}/>
     </div>
   );
