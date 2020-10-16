@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import request from 'superagent'
 
 class AddCard extends Component {
   state = {
@@ -12,11 +13,14 @@ class AddCard extends Component {
     };
     const handleSubmit = e => {
       e.preventDefault();
-      this.props.addCard(this.state.name)
+       request.get(`https://api.github.com/users/${this.state.name}`)
+       .then(res=>{
+      this.props.addCard(res.body)})
+      .catch(err=>alert('User '+ err.message))
       this.setState({
         name:''
-      })    
-    };
+      });    
+    }
     return (
       <div>
         <form onSubmit={handleSubmit}>

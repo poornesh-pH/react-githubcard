@@ -1,11 +1,11 @@
 import React from "react";
 import CardComponent from "./CardComponent";
 const CardList = props => {
-  const profiles = props.profiles;
+  const accounts = props.accounts;
   return (
     <div>
     <br/><hr/>
-      {profiles && profiles.map(profile => (
+      {accounts && accounts.map(profile => (
         <CardComponent {...profile} />
       ))}
     </div>
